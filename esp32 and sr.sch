@@ -1,0 +1,455 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L RF_Module:ESP32-WROOM-32 U3
+U 1 1 629F6988
+P 5800 3800
+F 0 "U3" H 5800 5381 50  0000 C CNN
+F 1 "ESP32" H 5800 5290 50  0000 C CNN
+F 2 "RF_Module:ESP32-WROOM-32" H 5800 2300 50  0001 C CNN
+F 3 "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf" H 5500 3850 50  0001 C CNN
+	1    5800 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC595 U4B
+U 1 1 629F8A73
+P 8500 2750
+F 0 "U4B" H 8500 3531 50  0000 C CNN
+F 1 "74HC595" H 8500 3440 50  0000 C CNN
+F 2 "" H 8500 2750 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf" H 8500 2750 50  0001 C CNN
+	1    8500 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC595 U4C
+U 1 1 629F98E6
+P 8500 4500
+F 0 "U4C" H 8500 5281 50  0000 C CNN
+F 1 "74HC595" H 8500 5190 50  0000 C CNN
+F 2 "" H 8500 4500 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf" H 8500 4500 50  0001 C CNN
+	1    8500 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8500 5600 8500 5200
+Wire Wire Line
+	8500 3450 7550 3450
+Wire Wire Line
+	7550 3450 7550 4700
+$Comp
+L power:+24V #PWR?
+U 1 1 629FB44F
+P 2050 2000
+F 0 "#PWR?" H 2050 1850 50  0001 C CNN
+F 1 "+24V" H 2065 2173 50  0000 C CNN
+F 2 "" H 2050 2000 50  0001 C CNN
+F 3 "" H 2050 2000 50  0001 C CNN
+	1    2050 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 629FBEB1
+P 2000 5600
+F 0 "#PWR?" H 2000 5350 50  0001 C CNN
+F 1 "GND" H 2005 5427 50  0000 C CNN
+F 2 "" H 2000 5600 50  0001 C CNN
+F 3 "" H 2000 5600 50  0001 C CNN
+	1    2000 5600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 5200 5800 5600
+Connection ~ 7550 5600
+Wire Wire Line
+	8100 4100 8100 3650
+Wire Wire Line
+	8100 3650 8900 3650
+Wire Wire Line
+	8900 3650 8900 3250
+Wire Wire Line
+	5800 2000 5800 2400
+Wire Wire Line
+	8500 2000 8500 2150
+Wire Wire Line
+	7700 2000 7700 2650
+Wire Wire Line
+	7700 3900 8500 3900
+Connection ~ 7700 2000
+$Comp
+L Regulator_Linear:LM2936-3.0 U1
+U 1 1 62A05E5D
+P 2900 2000
+F 0 "U1" H 2900 2242 50  0000 C CNN
+F 1 "LM2940CT5" H 2900 2151 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 2900 2200 50  0001 C CNN
+F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 3000 1750 50  0001 C CNN
+	1    2900 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2050 2000 2450 2000
+Wire Wire Line
+	3200 2000 3350 2000
+Wire Wire Line
+	2900 2300 2900 5600
+$Comp
+L Device:CP1 C1
+U 1 1 62A0B598
+P 2450 3800
+F 0 "C1" H 2565 3846 50  0000 L CNN
+F 1 "0,47uF" H 2565 3755 50  0000 L CNN
+F 2 "" H 2450 3800 50  0001 C CNN
+F 3 "~" H 2450 3800 50  0001 C CNN
+	1    2450 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1 C2
+U 1 1 62A0CD5B
+P 3350 3800
+F 0 "C2" H 3465 3846 50  0000 L CNN
+F 1 "22uF" H 3465 3755 50  0000 L CNN
+F 2 "" H 3350 3800 50  0001 C CNN
+F 3 "~" H 3350 3800 50  0001 C CNN
+	1    3350 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 3650 2450 2000
+Connection ~ 2450 2000
+Wire Wire Line
+	2450 2000 2600 2000
+Wire Wire Line
+	3350 3650 3350 2000
+Connection ~ 3350 2000
+Wire Wire Line
+	2450 3950 2450 5600
+Wire Wire Line
+	2450 5600 2900 5600
+Connection ~ 2900 5600
+Wire Wire Line
+	3350 3950 3350 5600
+Connection ~ 3350 5600
+Wire Wire Line
+	2900 5600 3350 5600
+Wire Wire Line
+	2450 5600 2000 5600
+Connection ~ 2450 5600
+Text Notes 3300 1900 0    50   ~ 0
++5V
+Wire Wire Line
+	7550 5600 8500 5600
+Wire Wire Line
+	5800 2000 7700 2000
+Wire Wire Line
+	7700 2000 8500 2000
+Wire Wire Line
+	8100 2650 7700 2650
+Connection ~ 7700 2650
+Wire Wire Line
+	7700 2650 7700 3900
+Wire Wire Line
+	8100 4400 7700 4400
+Wire Wire Line
+	7700 4400 7700 3900
+Connection ~ 7700 3900
+Wire Wire Line
+	7550 3450 7550 2950
+Wire Wire Line
+	7550 2950 8100 2950
+Connection ~ 7550 3450
+Wire Wire Line
+	7550 4700 8100 4700
+Connection ~ 7550 4700
+Wire Wire Line
+	7550 4700 7550 5600
+Wire Wire Line
+	8100 2850 6650 2850
+Wire Wire Line
+	6650 2850 6650 3400
+Wire Wire Line
+	6650 3400 6400 3400
+Wire Wire Line
+	6650 3400 6650 4600
+Wire Wire Line
+	6650 4600 8100 4600
+Connection ~ 6650 3400
+Wire Wire Line
+	8100 2550 6750 2550
+Wire Wire Line
+	6750 2550 6750 4300
+Wire Wire Line
+	6750 4500 6400 4500
+Wire Wire Line
+	8100 4300 6750 4300
+Connection ~ 6750 4300
+Wire Wire Line
+	6750 4300 6750 4500
+Wire Wire Line
+	8100 2350 6550 2350
+Wire Wire Line
+	6550 2350 6550 4400
+Wire Wire Line
+	6550 4400 6400 4400
+$Comp
+L Device:R R
+U 1 1 62A1A056
+P 9250 4100
+F 0 "R" V 9043 4100 50  0000 C CNN
+F 1 "100" V 9134 4100 50  0000 C CNN
+F 2 "" V 9180 4100 50  0001 C CNN
+F 3 "~" H 9250 4100 50  0001 C CNN
+	1    9250 4100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62A1C427
+P 9250 4200
+F 0 "R?" V 9043 4200 50  0001 C CNN
+F 1 "100" V 9135 4200 50  0001 C CNN
+F 2 "" V 9180 4200 50  0001 C CNN
+F 3 "~" H 9250 4200 50  0001 C CNN
+	1    9250 4200
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R
+U 1 1 62A1D7C1
+P 9250 4300
+F 0 "R" V 9043 4300 50  0001 C CNN
+F 1 "100" V 9135 4300 50  0001 C CNN
+F 2 "" V 9180 4300 50  0001 C CNN
+F 3 "~" H 9250 4300 50  0001 C CNN
+	1    9250 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R
+U 1 1 62A1E394
+P 9250 4400
+F 0 "R" V 9043 4400 50  0001 C CNN
+F 1 "100" V 9135 4400 50  0001 C CNN
+F 2 "" V 9180 4400 50  0001 C CNN
+F 3 "~" H 9250 4400 50  0001 C CNN
+	1    9250 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R
+U 1 1 62A1F0CE
+P 9250 4500
+F 0 "R" V 9043 4500 50  0001 C CNN
+F 1 "100" V 9135 4500 50  0001 C CNN
+F 2 "" V 9180 4500 50  0001 C CNN
+F 3 "~" H 9250 4500 50  0001 C CNN
+	1    9250 4500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R
+U 1 1 62A1FD2B
+P 9250 4600
+F 0 "R" V 9043 4600 50  0001 C CNN
+F 1 "100" V 9135 4600 50  0001 C CNN
+F 2 "" V 9180 4600 50  0001 C CNN
+F 3 "~" H 9250 4600 50  0001 C CNN
+	1    9250 4600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R
+U 1 1 62A208FA
+P 9250 4700
+F 0 "R" V 9043 4700 50  0001 C CNN
+F 1 "100" V 9135 4700 50  0001 C CNN
+F 2 "" V 9180 4700 50  0001 C CNN
+F 3 "~" H 9250 4700 50  0001 C CNN
+	1    9250 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R
+U 1 1 62A215DA
+P 9250 4800
+F 0 "R" V 9043 4800 50  0001 C CNN
+F 1 "100" V 9135 4800 50  0001 C CNN
+F 2 "" V 9180 4800 50  0001 C CNN
+F 3 "~" H 9250 4800 50  0001 C CNN
+	1    9250 4800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8900 4100 9100 4100
+Wire Wire Line
+	8900 4200 9100 4200
+Wire Wire Line
+	8900 4300 9100 4300
+Wire Wire Line
+	8900 4400 9100 4400
+Wire Wire Line
+	8900 4500 9100 4500
+Wire Wire Line
+	8900 4600 9100 4600
+Wire Wire Line
+	8900 4700 9100 4700
+Wire Wire Line
+	8900 4800 9100 4800
+Text GLabel 9600 4100 2    50   Input ~ 0
+QA
+Text GLabel 9600 4200 2    50   Input ~ 0
+QB
+Text GLabel 9600 4300 2    50   Input ~ 0
+QC
+Text GLabel 9600 4400 2    50   Input ~ 0
+QD
+Text GLabel 9600 4500 2    50   Input ~ 0
+QE
+Text GLabel 9600 4600 2    50   Input ~ 0
+QF
+Text GLabel 9600 4700 2    50   Input ~ 0
+QG
+Text GLabel 9600 4800 2    50   Input ~ 0
+QH
+Text GLabel 9600 2350 2    50   Input ~ 0
+Q1
+Text GLabel 9600 2450 2    50   Input ~ 0
+Q2
+Text GLabel 9600 2550 2    50   Input ~ 0
+Q3
+Text GLabel 9600 2650 2    50   Input ~ 0
+Q4
+Text GLabel 9600 2750 2    50   Input ~ 0
+Q5
+Text GLabel 9600 2850 2    50   Input ~ 0
+Q6
+Text GLabel 9600 2950 2    50   Input ~ 0
+Q7
+Text GLabel 9600 3050 2    50   Input ~ 0
+Q8
+Wire Wire Line
+	9400 4100 9600 4100
+Wire Wire Line
+	9400 4200 9600 4200
+Wire Wire Line
+	9400 4300 9600 4300
+Wire Wire Line
+	9400 4400 9600 4400
+Wire Wire Line
+	9400 4500 9600 4500
+Wire Wire Line
+	9600 4600 9400 4600
+Wire Wire Line
+	9400 4700 9600 4700
+Wire Wire Line
+	9600 4800 9400 4800
+Wire Wire Line
+	8900 2350 9600 2350
+Wire Wire Line
+	8900 2450 9600 2450
+Wire Wire Line
+	8900 2550 9600 2550
+Wire Wire Line
+	9600 2650 8900 2650
+Wire Wire Line
+	8900 2750 9600 2750
+Wire Wire Line
+	9600 2850 8900 2850
+Wire Wire Line
+	8900 2950 9600 2950
+Wire Wire Line
+	9600 3050 8900 3050
+Wire Wire Line
+	5800 5600 7550 5600
+$Comp
+L Sensor_Magnetic:A1301EUA-T U2
+U 1 1 62BD7C9B
+P 4450 4850
+F 0 "U2" H 4221 4896 50  0000 R CNN
+F 1 "A3144" H 4221 4805 50  0000 R CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4450 4500 50  0001 L CIN
+F 3 "http://www.allegromicro.com/en/Products/Part_Numbers/1101/1101.pdf" H 4450 5500 50  0001 C CNN
+	1    4450 4850
+	1    0    0    -1  
+$EndComp
+Connection ~ 5800 2000
+Connection ~ 5800 5600
+Wire Wire Line
+	4750 4850 4900 4850
+Wire Wire Line
+	5450 5200 5450 5300
+Wire Wire Line
+	5450 5300 6150 5300
+Wire Wire Line
+	6150 5300 6150 5200
+Wire Wire Line
+	6150 5200 6850 5200
+Wire Wire Line
+	6850 5200 6850 3200
+Wire Wire Line
+	6850 3200 6400 3200
+Connection ~ 4350 2000
+Wire Wire Line
+	4350 2000 5800 2000
+$Comp
+L Device:R R
+U 1 1 62BFDF12
+P 4900 4500
+F 0 "R" H 4970 4546 50  0000 L CNN
+F 1 "10k" H 4970 4455 50  0000 L CNN
+F 2 "" V 4830 4500 50  0001 C CNN
+F 3 "~" H 4900 4500 50  0001 C CNN
+	1    4900 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 4150 4900 4150
+Wire Wire Line
+	4900 4150 4900 4350
+Connection ~ 4350 4150
+Wire Wire Line
+	4350 4150 4350 4450
+Wire Wire Line
+	4900 4650 4900 4850
+Wire Wire Line
+	4350 2000 4350 4150
+Wire Wire Line
+	4350 5250 4350 5600
+Connection ~ 4350 5600
+Wire Wire Line
+	4900 4850 4900 5200
+Wire Wire Line
+	4900 5200 5450 5200
+Connection ~ 4900 4850
+Wire Wire Line
+	4350 5600 5800 5600
+Wire Notes Line
+	4800 4450 3950 4450
+Wire Notes Line
+	3950 4450 3950 5250
+Wire Notes Line
+	3950 5250 4800 5250
+Wire Notes Line
+	4800 5250 4800 4450
+Wire Wire Line
+	3350 5600 4350 5600
+Wire Wire Line
+	3350 2000 4350 2000
+$EndSCHEMATC
